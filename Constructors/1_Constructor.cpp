@@ -9,21 +9,37 @@ class Student{
     string name;
     int rollNum;
     float cgpa;
+    Student(){
+        // Default Constructor
+    }
+    Student(string s, int r){ //Parameterized Constructor
+        name = s;
+        rollNum = r;
+        //cgpa = g;
+    }
     Student(string s, int r, float g){ //Parameterized Constructor
         name = s;
         rollNum = r;
         cgpa = g;
     }
 };
-void display(Student s){
+void display(Student s){ // display details 
     cout<<"Name: "<<s.name<<endl;
     cout<<"Roll:  "<<s.rollNum<<endl;
     cout<<"Cgpa: "<<s.cgpa<<endl;
+    cout<<endl;
 }
 int main(){
 
-    Student s1("Rakibul Hasan", 674, 3.20);
+    Student s1("Rakibul Hasan", 674);
+    s1.cgpa = 3.20;
     display(s1);
+
+    Student s2;
+    s2.name = "Abdur Rahman";
+    s2.rollNum=01;
+    s2.cgpa=4.0;
+    display(s2);
 
     return 0;
 }
